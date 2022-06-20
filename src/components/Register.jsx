@@ -8,6 +8,7 @@ const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordVisibility, setPasswordVisibility] = useState(false)
 
     const submit = (e) =>{
         e.preventDefault();
@@ -16,6 +17,13 @@ const Register = () => {
         setEmail("")
         setPassword("")
     }
+
+    const togglePassword = (e) =>{
+        e.preventDefault()
+        setPasswordVisibility(!passwordVisibility)
+        console.log("change")
+    }
+
 
     // useEffect(
     //     () => {
@@ -59,9 +67,15 @@ const Register = () => {
             <div className="form-password">
                 <label htmlFor="password">Password:</label>
                 <div className="password-container">
-                    <input type="text" name="password" id="" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                    <button className="eye">
-                        <FaEye />
+                    <input type={passwordVisibility ? "text" : "password"} name="password" id="" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <button className="eye" onClick={togglePassword}>
+                        {
+                            passwordVisibility ?
+                            <FaEyeSlash/>
+                            :
+                            <FaEye />
+                        }
+
                     </button>
                 </div>
             </div>
