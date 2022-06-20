@@ -21,7 +21,6 @@ const Register = () => {
     const togglePassword = (e) =>{
         e.preventDefault()
         setPasswordVisibility(!passwordVisibility)
-        console.log("change")
     }
 
 
