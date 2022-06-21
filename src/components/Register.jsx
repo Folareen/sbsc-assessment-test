@@ -19,8 +19,14 @@ const Register = () => {
             setName("")
             setEmail("")
             setPassword("")
-            alert("registered")         
+            alert("registered")
+            window.location.href = "/home";         
+        }else{
+            setValidEmail(false)
+            setValidPassword(false)
+            window.location.href = "/home"; 
         }
+
     }
 
     const togglePassword = (e) =>{
@@ -38,16 +44,20 @@ const Register = () => {
             setValidPassword(false)
             return false
         }
+
+        // return false
     }
     const isEmailValid = () =>{
-        const regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
-        if(regex.test(email)){
-            setValidEmail(true)
-            return true
-        }else{
-            setValidEmail(false)
-            return false
-        }
+        // const regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+        // if(regex.test(email)){
+        //     setValidEmail(true)
+        //     return true
+        // }else{
+        //     setValidEmail(false)
+        //     return false
+        // }
+
+        return false
     }
 
 
@@ -89,7 +99,18 @@ const Register = () => {
                 <label htmlFor="name">Name:</label>
                 <input type="text" name="name" id="" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
+                {
+                    validEmail ?
+                    ""
+                    :
+                    <p className='form-warning'>
+                        Invalid Name
+                    </p>
+                }            
             <div className="form-email">
+                <label htmlFor="email">Email:</label>
+                <input type="email" name="email" id="" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            </div>
                 {
                     validEmail ?
                     ""
@@ -97,19 +118,8 @@ const Register = () => {
                     <p className='form-warning'>
                         Invalid Email Address
                     </p>
-                }
-                <label htmlFor="email">Email:</label>
-                <input type="email" name="email" id="" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            </div>
+                } 
             <div className="form-password">
-                {
-                    validPassword?
-                    ""
-                    :
-                    <p className='form-warning'>
-                        Password should be 8 characters long,contain atleast 1 alphanumeric character and special character
-                    </p>
-                }
                 <label htmlFor="password">Password:</label>
                 <div className="password-container">
                     <input type={passwordVisibility ? "text" : "password"} name="password" id="" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}/>
@@ -124,6 +134,14 @@ const Register = () => {
                     </button>
                 </div>
             </div>
+                {
+                    validPassword?
+                    ""
+                    :
+                    <p className='form-warning'>
+                        Password should be 8 characters long,contain atleast 1 alphanumeric character and special character
+                    </p>
+                }
             <button className="form-submit" type="submit" onClick={submit}>
                 Register
             </button>
