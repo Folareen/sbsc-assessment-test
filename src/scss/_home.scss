@@ -1,0 +1,50 @@
+.home {
+
+    min-height: 100vh;
+    font-size: 1em;
+    text-align: center;
+    background: $primary;
+    color: $secondary;
+
+    .account-details {
+        height: 80%;
+        padding: 1em .5em;
+
+        .account-name {
+            color: $dark;
+            font-size: 2em;
+            margin: .8em 0 .4em 0;
+
+            span {
+                font-family: $header;
+
+            }
+
+        }
+
+        .account-email {
+            font-size: 1.1em;
+            margin-bottom: .5em;
+        }
+
+        .account-avatar {
+            height: 250px;
+            width: 250px;
+            display: block;
+            margin: .2em auto;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+        }
+
+        .current-location{
+            font-size: 1.05em;
+            color: $dark;
+            margin: .5em 0;
+        }
+
+        .account-summary{
+            font-size: .9em;
+            margin: .5em 0;
+        }
+    }
+}
