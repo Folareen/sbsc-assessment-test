@@ -1,0 +1,50 @@
+.my-account {
+    background: $primary;
+    font-size: 1rem;
+    height: 100vh;
+    text-align: center;
+
+    &-details {
+        padding: 1em;
+        margin: 2em auto;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    &-name {
+        font-size: 2.5em;
+        font-family: $header;
+        letter-spacing: 2px;
+    }
+
+    &-avatar {
+        height: 150px;
+        width: 150px;
+        box-shadow: 0 0 .5px .5px rgba(0, 0, 0, .2);
+        border-radius: 50%;
+    }
+
+    &-email{
+        font-size: 1.1em;
+        margin: .2em 0 ;
+    }
+
+
+    &-edit {
+        border: none;
+        padding: 1em;
+        background: none;
+        box-shadow: 0 0 1px 1px rgba(0, 0, 0, .2);
+        color: $primary;
+        background: $secondary;
+        margin: 1em 0;
+        @include transition;
+
+        &:hover{
+            cursor: pointer;
+            background: $neutral;
+        }
+    }
+
+
+}

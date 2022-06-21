@@ -349,6 +349,57 @@ nav .header-nav .active {
   background: #005792;
 }
 
+.my-account {
+  background: #effbff;
+  font-size: 1rem;
+  height: 100vh;
+  text-align: center;
+}
+
+.my-account-details {
+  padding: 1em;
+  margin: 2em auto;
+  width: 90%;
+  max-width: 400px;
+}
+
+.my-account-name {
+  font-size: 2.5em;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 2px;
+}
+
+.my-account-avatar {
+  height: 150px;
+  width: 150px;
+  -webkit-box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.my-account-email {
+  font-size: 1.1em;
+  margin: .2em 0;
+}
+
+.my-account-edit {
+  border: none;
+  padding: 1em;
+  background: none;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: #effbff;
+  background: #005792;
+  margin: 1em 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.my-account-edit:hover {
+  cursor: pointer;
+  background: #00bbf0;
+}
+
 .home {
   min-height: 100vh;
   font-size: 1em;

@@ -3,7 +3,7 @@ import Header from './Header'
 
 const MyAccount = () => {
   return (
-    <div>
+    <div className='my-account'>
         <Header active={"my-account"}/>
         <div className="my-account-details">
           <h2 className="my-account-name">
@@ -12,11 +12,13 @@ const MyAccount = () => {
           <p className="my-account-email">
             sakawahab@gmail.com
           </p>
-          <img src="" alt="" className="my-account-avatar" />
-          <p className="my-current-location"></p>
-          <p className="my-account-summary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iure tenetur cum dolorum accusantium eligendi est doloribus libero deleniti repudiandae.
+          <img src="https://reqres.in/img/faces/2-image.jpg" alt="" className="my-account-avatar" />
+          <p className="job">
+            Developer
           </p>
+          <button className='my-account-edit'>
+            Edit Account Details
+          </button>
         </div>
     </div>
   )
