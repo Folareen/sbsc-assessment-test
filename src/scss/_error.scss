@@ -1,0 +1,31 @@
+.error{
+   height:100vh;
+   width: 100%;
+   background-color: $primary;
+   @include center;
+   flex-direction: column;
+   padding: 1em;
+
+   p{
+       font-size: 1.1em;
+       margin: 1em 0;
+   }
+
+   &-nav{
+       text-decoration: none;
+       padding: 1em 1.5em;
+       background: $secondary;
+       color: $primary;
+       display: inline-flex;
+       @include transition;
+       @include center;
+       flex-direction: column;
+       box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+
+       &:hover{
+           background: $neutral;
+
+       }
+   }
+
+}
