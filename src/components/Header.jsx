@@ -32,7 +32,7 @@ const Header = ({active}) => {
           </ul>
         </li>
         <li className="logout-nav">
-          <Link to="logout" ><FaSignOutAlt/></Link>
+          <Link to="/" ><FaSignOutAlt/></Link>
           <p className="tooltip">
             Logout
           </p>

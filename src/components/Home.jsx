@@ -24,10 +24,10 @@ const Homepage = () => {
         <Header active={"home"}/>
         <div className="account-details">
           <h2 className="account-name">
-            Welcome,<span>Wahab</span>
+            Welcome,<span>name</span>
           </h2>
           <p className="account-email">
-            sakawahab@gmail.com
+            name@gmail.com
           </p>
           <img src="https://reqres.in/img/faces/2-image.jpg" alt="" className="account-avatar" />
           <p className="current-location">

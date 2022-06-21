@@ -3,7 +3,7 @@ $secondary : #005792;
 $neutral : #00bbf0;
 $primary : #effbff;
 $header: 'Staatliches',
-cursive ;
+cursive;
 
 // mixins
 
@@ -15,4 +15,10 @@ cursive ;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin large {
+    @media (min-width: 768px) {
+        @content
+    }
 }
