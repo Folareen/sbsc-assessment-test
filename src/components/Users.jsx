@@ -4,7 +4,7 @@ import Header from './Header'
 const Users = () => {
   return (
     <div>
-      <Header/>
+      <Header active={"users"}/>
       users
     </div>
   )

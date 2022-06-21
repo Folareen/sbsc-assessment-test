@@ -21,7 +21,7 @@ const Homepage = () => {
 
   return (
     <div>
-        <Header/>
+        <Header active={"home"}/>
         <h3 className="name">
 
         </h3>

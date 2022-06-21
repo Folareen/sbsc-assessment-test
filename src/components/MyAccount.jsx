@@ -4,7 +4,7 @@ import Header from './Header'
 const MyAccount = () => {
   return (
     <div>
-        <Header/>
+        <Header active={"my-account"}/>
         MyAccount
     </div>
   )

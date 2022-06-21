@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {FaRegUserCircle, FaSignOutAlt} from 'react-icons/fa'
 
-const Header = () => {
+const Header = ({active}) => {
 
   const [drop, setDrop] = useState(false)
 
@@ -13,12 +13,12 @@ const Header = () => {
   return (
     <nav>
       <ul className='header-nav'>
-        <li className="home-nav ">
+        <li className={active == "home" ? "home-nav active" : "home-nav "}>
           <Link to="/home" >
             Home
           </Link> 
         </li>
-        <button className='account-dropdown' onClick={dropdown}>
+        <button className={ active == "my-account" || active == "users" ? 'account-dropdown active' : 'account-dropdown'} onClick={dropdown} >
           <FaRegUserCircle/>
         </button>
         <li className="account-nav" style={drop ? {display:"block"} : {display:"none"}}>
