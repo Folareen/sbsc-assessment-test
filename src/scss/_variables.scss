@@ -1,0 +1,9 @@
+$dark : #00204a;
+$secondary : #005792;
+$neutral : #00bbf0;
+$primary : #effbff;
+
+// mixins
+@mixin  transition {
+    transition: all .5s ease;
+}

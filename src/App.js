@@ -11,7 +11,7 @@ import Error from './components/Error'
 
 function App() {
 
-  const [isLogged, setIsLogged] = useState(true)
+  const [isLogged, setIsLogged] = useState(false)
   // const [loading, setLoading] = useState(true);
   // const [value, setValue] = useState("");
 
@@ -46,7 +46,7 @@ function App() {
     isLogged ?
     <Router>
         <Routes>
-          <Route exact path="/" element={<Welcome/>} />
+          <Route exact path="/" element={<Home/>} />
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/register" element={<Register/>} />
           <Route exact path="/home" element={<Home/>} />

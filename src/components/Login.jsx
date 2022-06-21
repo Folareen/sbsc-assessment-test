@@ -53,7 +53,7 @@ const Login = () => {
         <h1>
             SBSC
         </h1>
-        <form action="" className="form">
+        <form action="" method='post' className="form">
             <div className="form-email">
                 <label htmlFor="email">Email:</label>
                 <input type="email" name="email" id="" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)}/>
