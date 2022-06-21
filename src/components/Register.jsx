@@ -77,13 +77,15 @@ const Register = () => {
         console.log(res)
     }
   return (
-    <div>
+    <div className='forms'>
         <h1>
             SBSC
         </h1>
         <form action="" method='post' className="form">
+            <h3>
+                Register
+            </h3>
             <div className="form-name">
-
                 <label htmlFor="name">Name:</label>
                 <input type="text" name="name" id="" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
@@ -125,10 +127,11 @@ const Register = () => {
             <button className="form-submit" type="submit" onClick={submit}>
                 Register
             </button>
+            <p className='dont'>
+                Don't have an account? <Link to="/login">Login</Link>
+            </p>
         </form>
-        <p className='dont'>
-            Don't have an account? <Link to="/login">Login</Link>
-        </p>
+
     </div>
   )
 }

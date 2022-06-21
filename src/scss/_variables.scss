@@ -2,8 +2,17 @@ $dark : #00204a;
 $secondary : #005792;
 $neutral : #00bbf0;
 $primary : #effbff;
+$header: 'Staatliches',
+cursive ;
 
 // mixins
-@mixin  transition {
+
+@mixin transition {
     transition: all .5s ease;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

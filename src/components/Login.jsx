@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import { FaEyeSlash, FaEye} from 'react-icons/fa'
+import { FaEyeSlash, FaEye} from 'react-icons/fa';
 
 const Login = () => {
     const [value, setValue] = useState("");
@@ -49,16 +49,19 @@ const Login = () => {
 
 
   return (
-    <div>
+    <div className='forms'>
         <h1>
             SBSC
         </h1>
-        <form action="" method='post' className="form">
+        <form action="" method='post' className="form">               <h3>
+                Login
+            </h3>
             <div className="form-email">
                 <label htmlFor="email">Email:</label>
                 <input type="email" name="email" id="" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="form-password">
+
                 <label htmlFor="password">Password:</label>
                 <div className="password-container">
                     <input type={passwordVisibility ? "text" : "password"} name="password" id="" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}/>
@@ -75,10 +78,10 @@ const Login = () => {
             <button className="form-submit" type="submit" onClick={submit}>
                 Login
             </button>
+            <p className='dont'>
+                Don't have an account? <Link to="/register">Register</Link>
+            </p>
         </form>
-        <p className='dont'>
-            Don't have an account? <Link to="/register">Register</Link>
-        </p>
     </div>
   )
 }
