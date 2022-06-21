@@ -20,11 +20,11 @@ const Register = () => {
             setEmail("")
             setPassword("")
             alert("registered")
-            window.location.href = "/home";         
+            window.location.href = "./home";         
         }else{
             setValidEmail(false)
             setValidPassword(false)
-            window.location.href = "/home"; 
+            window.location.href = "./home"; 
         }
 
     }
