@@ -203,6 +203,67 @@
   background-color: #005792;
 }
 
+nav {
+  font-size: 1rem;
+  background: #effbff;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+}
+
+nav ul li {
+  text-align: center;
+  color: #00204a;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1em;
+  color: inherit;
+  height: 100%;
+  width: 100%;
+}
+
+nav ul li:hover, nav ul li:focus {
+  background-color: #00bbf0;
+  color: #00204a;
+}
+
+nav ul .home-nav {
+  width: 50%;
+}
+
+nav ul .my-account-nav {
+  width: 20%;
+}
+
+nav ul .users-nav {
+  width: 20%;
+}
+
+nav ul .logout-nav {
+  width: 10%;
+  color: brown;
+}
+
+nav ul .active {
+  color: #effbff !important;
+  background: #005792;
+}
+
 *,
 *::before,
 *::after {

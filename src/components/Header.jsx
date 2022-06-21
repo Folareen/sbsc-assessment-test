@@ -5,17 +5,17 @@ const Header = () => {
   return (
     <nav>
       <ul>
-        <li>
-          <Link to="/home" className="home-nav">Home</Link> 
+        <li className="home-nav ">
+          <Link to="/home" >Home</Link> 
         </li>
-        <li>
-          <Link to="/my-account" className="my-account-nav">My Account</Link>
+        <li className="my-account-nav ">
+          <Link to="/my-account" >My Account</Link>
         </li>
-        <li>
-          <Link to="/users" className="users-nav">Users</Link>
+        <li className="users-nav ">
+          <Link to="/users" >Users</Link>
         </li>
-        <li>
-          <Link to="/" className="logout-nav">Logout</Link>
+        <li className="logout-nav">
+          <Link to="logout" >Logout</Link>
         </li>
       </ul>
     </nav>
