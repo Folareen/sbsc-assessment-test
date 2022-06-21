@@ -11,7 +11,7 @@ import Error from './components/Error'
 
 function App() {
 
-  const [isLogged, setIsLogged] = useState(false)
+  const [isLogged, setIsLogged] = useState(true)
   // const [loading, setLoading] = useState(true);
   // const [value, setValue] = useState("");
 
