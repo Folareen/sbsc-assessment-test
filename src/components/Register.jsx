@@ -9,22 +9,23 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordVisibility, setPasswordVisibility] = useState(false);
+    const [validName, setValidName] = useState(true);
     const [validEmail, setValidEmail] = useState(true);
     const [validPassword, setValidPassword] = useState(true)
 
     const submit = (e) =>{
         e.preventDefault();
-        if(isPasswordValid() && isEmailValid()){
-            console.log([name,email,password])
+        if(isPasswordValid() && isEmailValid() && isNameValid()){
+            // console.log([name,email,password])
             setName("")
             setEmail("")
             setPassword("")
             alert("registered")
             window.location.href = "./home";         
         }else{
-            setValidEmail(false)
-            setValidPassword(false)
-            window.location.href = "./home"; 
+            isNameValid();
+            isEmailValid();
+            isPasswordValid();
         }
 
     }
@@ -35,29 +36,35 @@ const Register = () => {
     }
 
     const isPasswordValid = () =>{
-        const regex = new RegExp("^[A-Za-z0-9? ,_-]+$");
-        if(password.length >= 8 && regex.test(password)){
-            alert("yeah")
+        const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+        if(regex.test(password)){
             setValidPassword(true)
             return true
         }else{
             setValidPassword(false)
             return false
         }
-
-        // return false
     }
     const isEmailValid = () =>{
-        // const regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
-        // if(regex.test(email)){
-        //     setValidEmail(true)
-        //     return true
-        // }else{
-        //     setValidEmail(false)
-        //     return false
-        // }
+        const regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-        return false
+        if(regex.test(email)){
+            setValidEmail(true)
+            return true
+        }else{
+            setValidEmail(false)
+            return false
+        }
+    }
+    const isNameValid = () =>{
+        if(name.length > 0){
+            setValidName(true)
+            return true
+        }else{
+            setValidName(false)
+            return false
+        }
     }
 
 
@@ -100,7 +107,7 @@ const Register = () => {
                 <input type="text" name="name" id="" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
                 {
-                    validEmail ?
+                    validName?
                     ""
                     :
                     <p className='form-warning'>

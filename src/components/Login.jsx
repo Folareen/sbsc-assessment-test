@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import { FaEyeSlash, FaEye} from 'react-icons/fa';
 
+// const 
+
 const Login = () => {
 
     const [value, setValue] = useState("");
@@ -20,11 +22,9 @@ const Login = () => {
             alert("registered")
             window.location.href = "./home";         
         }else{
-            setValidEmail(false)
-            setValidPassword(false)
-            window.location.href = "./home"; 
+            isEmailValid();
+            isPasswordValid();
         }
-
     }
 
     const togglePassword = (e) =>{
@@ -33,10 +33,9 @@ const Login = () => {
     }
 
     const isPasswordValid = () =>{
-        // const regex = new RegExp("^[A-Za-z0-9? ,_-]+$");
-        const regex = /^[A-Za-z0-9_@./#&+-]*$/;
-        if(password.length >= 8 && regex.test(password)){
-            alert("yeah")
+        const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+        if(regex.test(password)){
             setValidPassword(true)
             return true
         }else{
@@ -45,7 +44,8 @@ const Login = () => {
         }
     }
     const isEmailValid = () =>{
-        const regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+        const regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        
         if(regex.test(email)){
             setValidEmail(true)
             return true
@@ -117,7 +117,7 @@ const Login = () => {
                 </div>
             </div>
                 {
-                    validEmail ?
+                    validPassword ?
                     ""
                     :
                     <p className='form-warning'>
