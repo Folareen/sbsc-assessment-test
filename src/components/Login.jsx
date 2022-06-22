@@ -20,7 +20,13 @@ const Login = () => {
             setEmail("")
             setPassword("")
             // alert("registered")
-            setUser(email)
+            setUser(
+                {
+                    first_name : name ? name : "name",
+                    email : email,
+                    password : password
+                }
+            )
             navigate("/");         
         }else{
             isEmailValid();
@@ -62,24 +68,24 @@ const Login = () => {
     //     }, []
     // )
 
-    // async function callApi(){
-    //     const data = await fetch ("https://reqres.in/api/users/1", {
-    //     method : 'POST',
-    //     headers : {
-    //         'Accept' : 'application/json, text/plain, */*',
-    //         'Content-type' : 'application/json'
-    //     },
-    //     body : JSON.stringify(
-    //         {
-    //         name: "morpheus",
-    //         job: "lead"
-    //         }
-    //     )
-    //     });
-    //     const res = await data.json()
-    //     // setValue(res)
-    //     console.log(res)
-    // }
+    async function callApi(){
+        const data = await fetch ("https://reqres.in/api/users/1", {
+        method : 'POST',
+        headers : {
+            'Accept' : 'application/json, text/plain, */*',
+            'Content-type' : 'application/json'
+        },
+        body : JSON.stringify(
+            {
+            first_name: "morpheus",
+            job: "lead"
+            }
+        )
+        });
+        const res = await data.json()
+        // setValue(res)
+        console.log(res)
+    }
 
 
   return (

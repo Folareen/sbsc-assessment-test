@@ -27,6 +27,14 @@ const Register = (props) => {
             // console.log("submitted")
 
             // alert("registered")
+            setUser(
+                {
+                    first_name : name ? name : "name",
+                    email : email,
+                    password : password
+                }
+            )
+            // await callApi();
             navigate("/");             
         }else{
             isNameValid();
@@ -79,26 +87,25 @@ const Register = (props) => {
     //     }, []
     // )
 
-    async function callApi(){
-        const data = await fetch ("https://reqres.in/api/users", {
-        method : 'POST',
-        headers : {
-            'Accept' : 'application/json, text/plain, */*',
-            'Content-type' : 'application/json'
-        },
-        body : JSON.stringify(
-            {
-            name: name,
-            email: email,
-            password: password,
-            }
-        )
-        });
-        const res = await data.json()
+    // async function callApi(){
+    //     const data = await fetch ("https://reqres.in/api/users", {
+    //     method : 'POST',
+    //     headers : {
+    //         'Accept' : 'application/json, text/plain, */*',
+    //         'Content-type' : 'application/json'
+    //     },
+    //     body : JSON.stringify(
+    //         {
+    //         first_name: name,
+    //         email: email,
+    //         password: password,
+    //         }
+    //     )
+    //     });
+        // const res = await data.json()
         // setValue(res)
-        console.log(res)
-        console.log("done")
-    }
+        // setUser(res.data)
+    // }
   return (
     <div className='forms'>
         <>

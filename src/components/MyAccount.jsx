@@ -7,6 +7,10 @@ import { UserContext } from '../context/UserContext';
 const MyAccount = () => {
   const [showModal, setShowModal] = useState(false);
 
+  const {user, setUser} = useContext(UserContext)
+
+  const {id, email, first_name} = user;
+
   return (
     showModal?
 
@@ -17,10 +21,10 @@ const MyAccount = () => {
         <Header active={"my-account"}/>
         <div className="my-account-details">
           <h2 className="my-account-name">
-            Name
+            {first_name}
           </h2>
           <p className="my-account-email">
-            name@gmail.com
+            {email}
           </p>
           <img src="https://reqres.in/img/faces/2-image.jpg" alt="" className="my-account-avatar" />
           <p className="job">

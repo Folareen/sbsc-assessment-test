@@ -6,6 +6,7 @@ const Homepage = () => {
   const [location, setLocation] = useState("");
   const {user, setUser} = useContext(UserContext)
 
+  const {id, email, first_name} = user;
 
   // useEffect (
   //   () => {
@@ -26,10 +27,10 @@ const Homepage = () => {
         <Header active={"home"}/>
         <div className="account-details">
           <h2 className="account-name">
-            Welcome,<span>{user}</span>
+            Welcome,<span>{first_name}</span>
           </h2>
           <p className="account-email">
-            name@gmail.com
+            {email}
           </p>
           <img src="https://reqres.in/img/faces/2-image.jpg" alt="" className="account-avatar" />
           <p className="current-location">
