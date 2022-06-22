@@ -1,6 +1,8 @@
-import React, { useState, useTransition } from 'react'
+import React, { useState, useContext } from 'react'
 import Header from './Header';
 import UpdateModal from './UpdateModal';
+import { UserContext } from '../context/UserContext';
+
 
 const MyAccount = () => {
   const [showModal, setShowModal] = useState(false);

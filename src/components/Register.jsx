@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import {Link} from 'react-router-dom'
 import { FaEyeSlash, FaEye} from 'react-icons/fa'
+import { UserContext } from '../context/UserContext'
+import { useNavigate} from 'react-router-dom'
 
-const Register = () => {
 
-    const [value, setValue] = useState("");
+const Register = (props) => {
+    const {user, setUser} = useContext(UserContext)
+    const navigate = useNavigate()
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -24,7 +27,7 @@ const Register = () => {
             // console.log("submitted")
 
             // alert("registered")
-            window.location.href = "./home";         
+            navigate("/");             
         }else{
             isNameValid();
             isEmailValid();
@@ -98,6 +101,9 @@ const Register = () => {
     }
   return (
     <div className='forms'>
+        <>
+        {user}
+        </>
         <h1>
             SBSC
         </h1>

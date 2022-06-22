@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {Link} from 'react-router-dom'
 import { FaEyeSlash, FaEye} from 'react-icons/fa';
-
-// const 
+import { UserContext } from '../context/UserContext';
+import { useNavigate} from 'react-router-dom'
 
 const Login = () => {
-
-    const [value, setValue] = useState("");
+    const {user, setUser} = useContext(UserContext)
+    const navigate = useNavigate()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordVisibility, setPasswordVisibility] = useState(false);
@@ -20,7 +20,8 @@ const Login = () => {
             setEmail("")
             setPassword("")
             // alert("registered")
-            window.location.href = "./home";         
+            setUser(email)
+            navigate("/");         
         }else{
             isEmailValid();
             isPasswordValid();
@@ -83,6 +84,9 @@ const Login = () => {
 
   return (
     <div className='forms'>
+        <>
+        {user}
+        </>
         <h1>
             SBSC
         </h1>

@@ -1,8 +1,10 @@
-import React, {useState, useEffect} from 'react'
-import Header from './Header'
+import React, {useState, useEffect, useContext} from 'react'
+import Header from './Header';
+import { UserContext } from '../context/UserContext';
 
 const Homepage = () => {
-  const [location, setLocation] = useState("")
+  const [location, setLocation] = useState("");
+  const {user, setUser} = useContext(UserContext)
 
 
   // useEffect (
@@ -24,7 +26,7 @@ const Homepage = () => {
         <Header active={"home"}/>
         <div className="account-details">
           <h2 className="account-name">
-            Welcome,<span>name</span>
+            Welcome,<span>{user}</span>
           </h2>
           <p className="account-email">
             name@gmail.com

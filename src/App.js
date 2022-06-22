@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import './css/index.css';
 import Register from './components/Register';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -8,11 +8,21 @@ import Home from './components/Home'
 import MyAccount from './components/MyAccount'
 import Users from './components/Users'
 import Error from './components/Error'
+import { UserContext} from './context/UserContext'
 
 function App() {
 
-  const [isLogged, setIsLogged] = useState(true);
+  // const [isLogged, setIsLogged] = useState(false);
+  const [user, setUser] = useState(null)
 
+  // const providerValue = useMemo(() => ({user, setUser}), [user, setUser]);
+
+
+  // useEffect(
+  //   () => {
+  //     setIsLogged(logBool)
+  //   }, [logBool]
+  // )
   // const 
   // const [loading, setLoading] = useState(true);
   // const [value, setValue] = useState("");
@@ -45,26 +55,29 @@ function App() {
 
 
   return (
-    isLogged ?
+    user ?
     <Router>
-        <Routes>
-          <Route exact path="/" element={<Welcome/>} />
-          <Route exact path="/login" element={<Login/>} />
-          <Route exact path="/register" element={<Register/>} />
-          <Route exact path="/home" element={<Home/>} />
-          <Route exact path="/my-account" element={<MyAccount/>} />
-          <Route exact path="/users" element={<Users/>} />
-          <Route path="*" element={<Error/>}/>
-        </Routes>
+        <UserContext.Provider value={{user, setUser}}>
+          <Routes>
+            <Route exact path="/" element={<Home/>} />
+            {/* <Route exact path="/login" element={<Login/>} />
+            <Route exact path="/register" element={<Register/>} /> */}
+            <Route exact path="/my-account" element={<MyAccount/>} />
+            <Route exact path="/users" element={<Users/>} />
+            <Route path="*" element={<Error/>}/>
+          </Routes>
+        </UserContext.Provider>
     </Router>
     :  
     <Router>
-      <Routes>
-        <Route exact path="/" element={<Welcome/>} />
-        <Route exact path="/login" element={<Login/>} />
-        <Route exact path="/register" element={<Register/>} />
-        <Route path="*" element={<Error/>}/>
-      </Routes>
+      <UserContext.Provider value={{user, setUser}}>
+        <Routes>
+          <Route exact path="/" element={<Welcome/>} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register/>} />
+          <Route path="*" element={<Error/>}/>
+        </Routes>
+      </UserContext.Provider>
     </Router>
   )
 }

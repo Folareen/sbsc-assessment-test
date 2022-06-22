@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import {FaRegUserCircle, FaSignOutAlt} from 'react-icons/fa'
+import { UserContext } from '../context/UserContext';
 
 const Header = ({active}) => {
 
+  const {user, setUser} = useContext(UserContext)
   const [drop, setDrop] = useState(false)
 
   const dropdown = () => {
@@ -14,7 +16,7 @@ const Header = ({active}) => {
     <nav>
       <ul className='header-nav'>
         <li className={active == "home" ? "home-nav active" : "home-nav "}>
-          <Link to="/home" >
+          <Link to="/" >
             Home
           </Link> 
         </li>
@@ -32,7 +34,7 @@ const Header = ({active}) => {
           </ul>
         </li>
         <li className="logout-nav">
-          <Link to="/" ><FaSignOutAlt/></Link>
+          <Link to="/" onClick={() => setUser(null)} ><FaSignOutAlt/></Link>
           <p className="tooltip">
             Logout
           </p>
