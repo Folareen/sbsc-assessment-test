@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import { FaEyeSlash, FaEye} from 'react-icons/fa'
 
@@ -20,7 +20,10 @@ const Register = () => {
             setName("")
             setEmail("")
             setPassword("")
-            alert("registered")
+            // callApi();
+            // console.log("submitted")
+
+            // alert("registered")
             window.location.href = "./home";         
         }else{
             isNameValid();
@@ -70,12 +73,11 @@ const Register = () => {
 
     // useEffect(
     //     () => {
-    //     callApi()
     //     }, []
     // )
 
     async function callApi(){
-        const data = await fetch ("https://reqres.in/api/register", {
+        const data = await fetch ("https://reqres.in/api/users", {
         method : 'POST',
         headers : {
             'Accept' : 'application/json, text/plain, */*',
@@ -92,6 +94,7 @@ const Register = () => {
         const res = await data.json()
         // setValue(res)
         console.log(res)
+        console.log("done")
     }
   return (
     <div className='forms'>
@@ -153,7 +156,7 @@ const Register = () => {
                 Register
             </button>
             <p className='dont'>
-                Don't have an account? <Link to="/login">Login</Link>
+                Have an account? <Link to="/login">Login</Link>
             </p>
         </form>
 

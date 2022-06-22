@@ -19,7 +19,7 @@ const Login = () => {
             console.log([email,password])
             setEmail("")
             setPassword("")
-            alert("registered")
+            // alert("registered")
             window.location.href = "./home";         
         }else{
             isEmailValid();
