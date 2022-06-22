@@ -12,20 +12,8 @@ import { UserContext} from './context/UserContext'
 
 function App() {
 
-  // const [isLogged, setIsLogged] = useState(false);
   const [user, setUser] = useState(null)
 
-  // const providerValue = useMemo(() => ({user, setUser}), [user, setUser]);
-
-
-  // useEffect(
-  //   () => {
-  //     setIsLogged(logBool)
-  //   }, [logBool]
-  // )
-  // const 
-  // const [loading, setLoading] = useState(true);
-  // const [value, setValue] = useState("");
 
   // useEffect(
   //   () => {
@@ -60,8 +48,6 @@ function App() {
         <UserContext.Provider value={{user, setUser}}>
           <Routes>
             <Route exact path="/" element={<Home/>} />
-            {/* <Route exact path="/login" element={<Login/>} />
-            <Route exact path="/register" element={<Register/>} /> */}
             <Route exact path="/my-account" element={<MyAccount/>} />
             <Route exact path="/users" element={<Users/>} />
             <Route path="*" element={<Error/>}/>

@@ -22,7 +22,6 @@ const Login = () => {
             // alert("registered")
             setUser(
                 {
-                    first_name : name ? name : "name",
                     email : email,
                     password : password
                 }
